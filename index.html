@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personal Gmail Read-Only Integration</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin:0; background:#0d1117; color:#e6edf3;
+         font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  main { max-width:44rem; margin:0 auto; padding:4rem 1.5rem 6rem; }
+  h1 { font-size:1.9rem; line-height:1.25; margin:0 0 .4rem; letter-spacing:-.02em; }
+  h2 { font-size:1.05rem; margin:2.6rem 0 .6rem; color:#e6edf3; }
+  .sub { color:#8b949e; margin:0 0 2.4rem; }
+  ul { padding-left:1.15rem; }
+  li { margin:.4rem 0; }
+  code { background:#161b22; border:1px solid #30363d; border-radius:5px;
+         padding:.12em .38em; font-size:.88em; }
+  a { color:#58a6ff; }
+  footer { margin-top:3.5rem; padding-top:1.5rem; border-top:1px solid #21262d;
+           color:#8b949e; font-size:.9rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Personal Gmail Read-Only Integration</h1>
+  <p class="sub">A private, single-user automation integration. Application name on the Google
+     consent screen: <code>foragent</code>.</p>
+
+  <h2>What this application is</h2>
+  <p>This is <strong>not a product and not a public service</strong>. It is a personal
+     automation tool built and used by one person, on their own machine, against
+     <strong>their own Google account only</strong>. There is no sign-up, no other users,
+     and no server that receives anyone else&rsquo;s data.</p>
+
+  <h2>What it does</h2>
+  <p>It reads the owner&rsquo;s own Gmail inbox to find billing statements, travel booking
+     confirmations, and similar documents the owner already receives, so that a local
+     assistant can remind the owner of payment due dates and keep travel paperwork
+     organised on the owner&rsquo;s own computer.</p>
+
+  <h2>Google user data accessed</h2>
+  <p>Exactly one OAuth scope is requested:</p>
+  <ul>
+    <li><code>https://www.googleapis.com/auth/gmail.readonly</code> &mdash; read-only access to
+        Gmail messages and metadata.</li>
+  </ul>
+  <p>No other Google product or scope is requested. There is <strong>no write, send, delete,
+     or modify capability</strong>: the integration cannot send mail, cannot delete mail, and
+     cannot change anything in the mailbox. Those operations are verified as rejected at the
+     API level.</p>
+
+  <h2>How the data is handled</h2>
+  <ul>
+    <li>Authorization tokens are stored <strong>locally and encrypted</strong> on the
+        owner&rsquo;s own machine.</li>
+    <li>Message content is read on demand and is <strong>never transmitted to any third
+        party</strong>.</li>
+    <li>Data is not sold, shared, transferred, or used for advertising, profiling, or
+        credit-worthiness purposes.</li>
+    <li>Access can be revoked by the owner at any time, at which point the tooling stops
+        working immediately.</li>
+  </ul>
+
+  <h2>Limited Use disclosure</h2>
+  <p>This application&rsquo;s use of information received from Google APIs adheres to the
+     <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API
+     Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+  <h2>Privacy policy</h2>
+  <p>Full details are in the <a href="privacy.html">Privacy Policy</a>.</p>
+
+  <footer>
+    Single-user personal integration &middot; contact:
+    <a href="mailto:arun4sym@gmail.com">arun4sym@gmail.com</a>
+  </footer>
+</main>
+</body>
+</html>
